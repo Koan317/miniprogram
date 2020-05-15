@@ -1,0 +1,23 @@
+<!--miniprogram/pages/big5duty/big5duty.wxml-->
+
+<scroll-view scroll-y='true' style="height:{{height}}px">
+  <block class="introBlock">
+    <text class="introText">大五尽责性介绍</text>
+  </block>
+  <form bindsubmit="onSubmit" bindreset="onReset">
+    <input hidden="true" name="questionLen" value="{{questionLen}}"/>
+    <view class="question" wx:for="{{question}}" wx:key="big5">
+      <text class="quesText">{{item.No}}. {{item.Q}}</text>
+			<input hidden="true" name="No" value="{{item.No}}"/>
+      <radio-group class="radioGroup" name="anwser">
+        <radio value="5">5</radio>
+        <radio value="4">4</radio>
+        <radio value="3">3</radio>
+        <radio value="2">2</radio>
+        <radio value="1">1</radio>
+      </radio-group>
+    </view>
+    <button class="submit" form-type="submit">提交</button>
+    <button class="reset" form-type="reset">重置</button>
+  </form>
+</scroll-view>
