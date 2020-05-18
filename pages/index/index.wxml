@@ -1,8 +1,8 @@
 <!--index.wxml-->
-<view class="container">
+<image class="container" src="../../images/档案背景图.gif"/>
 
 	<!--轮播图-->
-	<swiper class="swiper" indicator-dots="true" autoplay="true" interval="5000" duration="1000">  
+	<swiper class="swiper" indicator-dots="true" autoplay="true" interval="5000" duration="400">  
     <block wx:for="{{movies}}" wx:for-index="index" wx:key='swiper'>
       <swiper-item>
 				<navigator url="{{item.url}}" open-type="navigate">
@@ -66,9 +66,10 @@
 
 	<!-- 大五 -->
 	<view class="fstButton">
-		<navigator url="/pages/big5duty/big5duty" open-type="navigate" >
-			<image src="/images/按钮-档案.png" class="big5duty"/>
+		<navigator url="../big5duty/big5duty" open-type="navigate">
+			<!--<image src="/images/按钮-档案.png" class="big5duty"/>-->
+			<text>text</text>
 		</navigator>
 	</view>
 
-</view>
+
