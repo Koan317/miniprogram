@@ -8,28 +8,22 @@ Page({
     logged: false,
     takeSession: false,
     requestResult: '',
-    movies: [
-			{
-				url: '../big5duty/big5duty',
-        src: '../../images/海报.gif'
-      },
-      {
+    movies: [{
+			url: 'pages/big5duty/big5duty',
+        src: './海报.gif'
+      },{
 				url: '../big5duty/big5duty',
 				src: '../../images/2.gif'
-      },
-      {
+      },{
 				url: '../big5duty/big5duty',
 				src: '../../images/3.gif'
-      },
-      {
+      },{
 				url: '../big5duty/big5duty',
 				src: '../../images/4.gif'
-      },
-      {
+      },{
 				url: '../big5duty/big5duty',
 				src: '../../images/5.gif'
-      }
-    ]
+      }]
   },
 
   onLoad: function() {

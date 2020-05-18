@@ -13,7 +13,8 @@
 		"pages/openapi/cloudid/cloudid",
 		"pages/im/im",
 		"pages/im/room/room",
-		"pages/big5duty/big5duty"
+		"pages/big5duty/big5duty",
+		"pages/myPage/myPage"
 	],
 	"window": {
 		"backgroundColor": "#F6F6F6",
@@ -32,7 +33,7 @@
 				"selectedIconPath": "/images/底层菜单-首页.png"
 			},
 			{
-				"pagePath": "pages/big5duty/big5duty",
+				"pagePath": "pages/myPage/myPage",
 				"iconPath": "images/底层菜单-我.png",
 				"selectedIconPath": "/images/底层菜单-我.png"
 			}

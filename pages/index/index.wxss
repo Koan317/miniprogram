@@ -7,13 +7,9 @@ page {
   justify-content: flex-start;
 }
 
-.fstButton{
-	height: auto;
-}
-
 .container {
 	position:absolute;
-	top:400rpx;
+	top:168rpx;
 	left:0;
 	width:100%;
 	height:100%;
@@ -21,7 +17,7 @@ page {
 }
 
 .swiper {
-  height: 400rpx;
+  height: 168rpx;
   width: 100%;
 }
 .swiper image {
@@ -29,9 +25,19 @@ page {
   width: 100%;
 }
 
+.fstButton{
+	top:1880rpx;
+	left:75rpx;
+}
 .big5duty{
 	height:200rpx;
+	width:500rpx;
 }
+
+
+
+
+
 
 .userinfo, .uploader, .tunnel {
   margin-top: 40rpx;
