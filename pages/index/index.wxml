@@ -4,7 +4,7 @@
 <!--轮播图-->
 <swiper class="swiper" autoplay="true" interval="5000" duration="1000">  
 	<swiper-item wx:for="{{movies}}" wx:key="swiper">
-		<navigator url="{{item.url}}" open-type="switchTab">
+		<navigator url="{{item.url}}" open-type="navigate">
 			<image src="{{item.src}}" mode="aspectFill"/>
 		</navigator>
 	</swiper-item>  

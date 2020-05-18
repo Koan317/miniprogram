@@ -26,11 +26,13 @@ page {
 }
 
 .fstButton{
-	top:1880rpx;
+	top:180rpx;
 	left:75rpx;
 }
 .big5duty{
-	height:200rpx;
+	top:20%;
+	left:75rpx;
+	height:180rpx;
 	width:500rpx;
 }
 

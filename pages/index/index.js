@@ -9,21 +9,12 @@ Page({
     takeSession: false,
     requestResult: '',
     movies: [{
-			url: 'pages/big5duty/big5duty',
+				url: '/pages/openapi/openapi',
         src: './海报.gif'
       },{
-				url: '../big5duty/big5duty',
-				src: '../../images/2.gif'
-      },{
-				url: '../big5duty/big5duty',
-				src: '../../images/3.gif'
-      },{
-				url: '../big5duty/big5duty',
-				src: '../../images/4.gif'
-      },{
-				url: '../big5duty/big5duty',
-				src: '../../images/5.gif'
-      }]
+				url: '/pages/im/im',
+				src: './按钮-故事.png'
+			}]
   },
 
   onLoad: function() {
