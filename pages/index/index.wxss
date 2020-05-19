@@ -7,6 +7,15 @@ page {
   justify-content: flex-start;
 }
 
+.swiper {
+  height: 168rpx;
+  width: 750rpx;
+}
+.swiper image {
+  height: 168rpx;
+  width: 750rpx;
+}
+
 .container {
 	position:absolute;
 	top:168rpx;
@@ -16,22 +25,12 @@ page {
 	z-index: -1;
 }
 
-.swiper {
-  height: 168rpx;
-  width: 100%;
-}
-.swiper image {
-  height: 100%;
-  width: 100%;
-}
-
 .fstButton{
-	top:180rpx;
-	left:75rpx;
+  position:absolute;
+	top:280rpx;
+	left:125rpx;
 }
 .big5duty{
-	top:20%;
-	left:75rpx;
 	height:180rpx;
 	width:500rpx;
 }
