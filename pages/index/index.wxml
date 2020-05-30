@@ -1,5 +1,5 @@
 <!--index.wxml-->
-<image class="container" src="./档案背景图.gif"/>
+<image class="container" src="./danganbeijingtu.gif"/>
 
 <!--轮播图-->
 <swiper class="swiper" autoplay="true" interval="5000" duration="1000">  
@@ -13,7 +13,7 @@
 <!-- 大五 -->
 <view class="fstButton">
 	<navigator url="/pages/big5duty/big5duty" open-type="navigate">
-		<image src="./按钮-档案.png" class="big5duty"/>
+		<image src="./anniu_dangan.png" class="big5duty"/>
 	</navigator>
 </view>
 

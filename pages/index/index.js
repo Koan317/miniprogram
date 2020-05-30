@@ -10,7 +10,7 @@ Page({
     requestResult: '',
     movies: [{
 				url: '/pages/big5duty/big5duty',
-        src: './海报.gif'
+        src: './haibao.gif'
       },{
 				url: '/pages/big5duty/big5duty',
         src: './2.gif'

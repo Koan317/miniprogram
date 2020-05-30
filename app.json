@@ -29,13 +29,13 @@
 		"list": [
 			{
 				"pagePath": "pages/index/index",
-				"iconPath": "images/底层菜单-首页.png",
-				"selectedIconPath": "/images/底层菜单-首页.png"
+				"iconPath": "images/dicengcaidan_shouye.png",
+				"selectedIconPath": "/images/dicengcaidan_shouye.png"
 			},
 			{
 				"pagePath": "pages/myPage/myPage",
-				"iconPath": "images/底层菜单-我.png",
-				"selectedIconPath": "/images/底层菜单-我.png"
+				"iconPath": "images/dicengcaidan_wo.png",
+				"selectedIconPath": "/images/dicengcaidan_wo.png"
 			}
 		]
 	},
