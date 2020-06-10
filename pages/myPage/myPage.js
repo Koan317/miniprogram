@@ -1,15 +1,15 @@
 // miniprogram/pages/myPage/myPage.js
-const app=getApp()
+const app = getApp()
 Page({
 	/**
 	 * 页面的初始数据
 	 */
 	data: {
-    avatarUrl: './user-unlogin.png',
-    userInfo: {},
+		avatarUrl: './user-unlogin.png',
+		userInfo: {},
 		logged: false,
-		resId:'',
-		isSignIn:false
+		resId: '',
+		isSignIn: false
 	},
 
 	/**
@@ -17,28 +17,28 @@ Page({
 	 */
 	onLoad: function (options) {
 		if (!wx.cloud) {
-      wx.redirectTo({
-        url: '../chooseLib/chooseLib',
-      })
-      return
-    }
+			wx.redirectTo({
+				url: '../chooseLib/chooseLib',
+			})
+			return
+		}
 
-    // 获取用户信息
-    wx.getSetting({
-      success: res => {
-        if (res.authSetting['scope.userInfo']) {
-          // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
-          wx.getUserInfo({
-            success: res => {
-              this.setData({
-                avatarUrl: res.userInfo.avatarUrl,
-                userInfo: res.userInfo
-              })
-            }
-          })
-        }
-      }
-    })
+		// 获取用户信息
+		wx.getSetting({
+			success: res => {
+				if (res.authSetting['scope.userInfo']) {
+					// 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
+					wx.getUserInfo({
+						success: res => {
+							this.setData({
+								avatarUrl: res.userInfo.avatarUrl,
+								userInfo: res.userInfo
+							})
+						}
+					})
+				}
+			}
+		})
 
 		function v(e) {
 			if (!this.data.logged && e.detail.userInfo) {
@@ -65,54 +65,66 @@ Page({
 
 	},
 
-	onSignIn(){
-		var date=new Date()
-		//var isSignIn
-		const db = wx.cloud.database()
+	onSignIn() {
+		var date = new Date()
+		const dbselect = wx.cloud.database()
+		const dbinsert = wx.cloud.database()
 
-		db.collection('signin').where({
-			signInDate:date.getFullYear()+'/'+date.getMonth()+'/'+date.getDate(),
-			_openid:app.openid
-		}).get({
-			success:signHistory=>{
-				if(signHistory.data.length){
-					console.log('今日已签到')
-					wx.showToast({
-						title: '今日已签到'
-					})
-					this.setData({
-						isSignIn:true
-					})
-				}
-			}
-		})
-		console.log(this.data.isSignIn)
 		if(!this.data.isSignIn){
-			db.collection('signin').add({
-				data: {
-					openId:app.openid,
-					signInDate:date.getFullYear()+'/'+date.getMonth()+'/'+date.getDate(),
-					signInTime:date.getHours()+':'+date.getMinutes()+':'+date.getSeconds()
-				},
-				success: signInres => {
-					// 在返回结果中会包含新创建的记录的 _id
-					this.setData({
-						resId:signInres._id,
-					})
+			dbselect.collection('signin').where({
+				_openid: app.openid,
+				signInDate: date.getFullYear() + '/' + date.getMonth() + '/' + date.getDate()
+			}).get({
+				success: res => {
+					if(!res.data.length){
+						dbinsert.collection('signin').add({
+							data: {
+								openId: app.openid,
+								signInDate: date.getFullYear() + '/' + date.getMonth() + '/' + date.getDate(),
+								signInTime: date.getHours() + ':' + date.getMinutes() + ':' + date.getSeconds()
+							},
+							success: res => {
+								// 在返回结果中会包含新创建的记录的 _id
+								this.setData({
+									resId: res._id,
+								})
+								wx.showToast({
+									title: '签到成功'
+								})
+								console.log('签到成功，记录 _id: ', res._id)
+							},
+							fail: err => {
+								wx.showToast({
+									icon: 'none',
+									title: '签到失败'
+								})
+								console.error('[数据库] [新增记录] 失败：', err)
+							}
+						})
+					}
 					wx.showToast({
-						title: '签到成功'
+						title: '今日已签到',
+						icon:'none'
 					})
-					console.log('签到成功，记录 _id: ', signInres._id)
+					console.log('今日已签到,记录 _id: ', res._id)
+					this.setData({
+						isSignIn: true
+					})
 				},
 				fail: err => {
 					wx.showToast({
 						icon: 'none',
-						title: '签到失败'
+						title: '网络错误，请稍后再试'
 					})
 					console.error('[数据库] [新增记录] 失败：', err)
 				}
 			})
-		}
+		}else{
+			wx.showToast({
+				title: '今日已签到',
+				icon:'none'
+			})
+		} 
 	},
 	/**
 	 * 生命周期函数--监听页面隐藏
