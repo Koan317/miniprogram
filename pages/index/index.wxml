@@ -17,7 +17,7 @@
 	</navigator>
 </view>
 
-<!-- 用户 openid 
+<!-- 用户 openid -->
 <view class="userinfo">
 	<button 
 		open-type="getUserInfo" 
@@ -29,7 +29,7 @@
 	<view class="userinfo-nickname-wrapper">
 		<button class="userinfo-nickname" bindtap="onGetOpenid">点击获取 openid</button>
 	</view>
-</view>-->
+</view>
 
 <!-- 上传图片 
 <view class="uploader">
