@@ -58,6 +58,9 @@ Page({
 		var reversept = new Array(12).fill(0)
 		reversept[2] = reversept[5] = reversept[8] = reversept[10] = 1
 		for (let i=0;i<12;i++) {//记分
+			if(radiolist.get(String(i + 1))==0){
+				continue
+			}
 			if (reversept[i] == 1) {
 				big5score += (-(radiolist.get(String(i + 1)) - 6))
 			} else {

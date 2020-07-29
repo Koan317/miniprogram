@@ -10,11 +10,12 @@
       <text class="quesText">{{item.No}}. {{item.Q}}</text>
 			<!--<input hidden="true" name="No" value="{{item.No}}"/>-->
       <radio-group class="radioGroup" name="{{item.No}}">
-        <radio value="5" checked="true">5</radio>
+        <radio value="5">5</radio>
         <radio value="4">4</radio>
         <radio value="3">3</radio>
         <radio value="2">2</radio>
         <radio value="1">1</radio>
+        <radio value="0" checked="true">不作答</radio>
       </radio-group>
     </view>
     <button class="submit" form-type="submit">提交</button>
