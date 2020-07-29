@@ -1,5 +1,5 @@
 // miniprogram/pages/big5duty/big5duty.js
-const app=getApp()
+const app = getApp()
 
 Page({
 
@@ -7,17 +7,18 @@ Page({
 	 * 页面的初始数据
 	 */
 	data: {
-		openid: '',//用户ID
-		question: [],//题目
-		questionLen:0,//问题个数
-		result:[],//测试结果
-		resultid:''//结果ID
+		openid: '', //用户ID
+		question: [], //题目
+		questionLen: 0, //问题个数
+		result: [], //测试结果
+		resultid: '', //结果ID
+		score:0//最后得分
 	},
 
 	/**
 	 * 生命周期函数--监听页面加载
 	 */
-	onLoad: function (options) {
+	onLoad: function (_options) {
 		if (app.globalData.openid) {
 			this.setData({
 				openid: app.globalData.openid
@@ -35,8 +36,8 @@ Page({
 			success: res => {
 				this.setData({
 					//question: JSON.stringify(res.data.Quiz, null, 2)
-					question:res.data.Quiz,
-					questionLen:res.data.Quiz.length
+					question: res.data.Quiz,
+					questionLen: res.data.Quiz.length
 				})
 				console.log('[数据库] [查询记录] 成功: ', res.data._id)
 			},
@@ -46,32 +47,50 @@ Page({
 		})
 	},
 
-	onSubmit: function(e){
-		var questionLen = e.detail.value.questionLen
-		var radioList=e.detail.value
-		for(var i=0;i<questionLen;i++){
-			console.log(radioList.anwser1)
-			if(radioList[i]==""){
-				wx.showToast({
-					title: '请完成测试再提交',
-				})
-				return false
+	onSubmit: function (e) {
+		var resultjson=e.detail.value
+		var radiolist = new Map()//Map
+		for (let i of Object.keys(resultjson)) {
+			radiolist.set(i, parseInt(resultjson[i]))
+		}
+		//console.log('radiolist:',radiolist)
+		var big5score = 0
+		var reversept = new Array(12).fill(0)
+		reversept[2] = reversept[5] = reversept[8] = reversept[10] = 1
+		for (let i=0;i<12;i++) {//记分
+			if (reversept[i] == 1) {
+				big5score += (-(radiolist.get(String(i + 1)) - 6))
+			} else {
+				big5score += radiolist.get(String(i + 1))
 			}
 		}
 		const db = wx.cloud.database()
+		wx.showLoading({
+			title: '提交中',
+			mask:true
+		})
 		db.collection('big5results').add({
 			data: {
-				openId:app.openid,
-				result:e.detail.value
+				openId: app.openid,
+				big5score: big5score,
+				result: e.detail.value
 			},
 			success: res => {
 				// 在返回结果中会包含新创建的记录的 _id
 				this.setData({
-					result:[],
-					resultid:res._id
+					result: [],
+					resultid: res._id,
+					score:big5score
 				})
+				wx.hideLoading()
 				wx.showToast({
-					title: '提交成功'
+					title: '得分'+big5score+'分',
+					duration:2000,
+					success:function(){setTimeout(() => {
+						wx.navigateBack({
+							delta:1
+						})
+					}, 2000);}
 				})
 				console.log('[数据库] [新增记录] 成功，记录 _id: ', res._id)
 			},

@@ -5,12 +5,12 @@
     <text class="introText">大五尽责性介绍</text>
   </block>
   <form bindsubmit="onSubmit" bindreset="onReset">
-    <input hidden="true" name="questionLen" value="{{questionLen}}"/>
+    <!--<input hidden="true" name="questionLen" value="{{questionLen}}"/>-->
     <view class="question" wx:for="{{question}}" wx:key="big5">
       <text class="quesText">{{item.No}}. {{item.Q}}</text>
-			<input hidden="true" name="No" value="{{item.No}}"/>
-      <radio-group class="radioGroup" name="anwser">
-        <radio value="5">5</radio>
+			<!--<input hidden="true" name="No" value="{{item.No}}"/>-->
+      <radio-group class="radioGroup" name="{{item.No}}">
+        <radio value="5" checked="true">5</radio>
         <radio value="4">4</radio>
         <radio value="3">3</radio>
         <radio value="2">2</radio>

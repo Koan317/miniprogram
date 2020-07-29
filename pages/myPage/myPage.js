@@ -65,7 +65,11 @@ Page({
 
 	},
 
-	onSignIn() {
+	onSignIn() {//签到，其中getMonth()方法返回值范围是0-11
+		wx.showLoading({
+			title: '正在签到',
+			mask:true
+		})
 		var date = new Date()
 		const dbselect = wx.cloud.database()
 		const dbinsert = wx.cloud.database()
@@ -76,7 +80,7 @@ Page({
 				signInDate: date.getFullYear() + '/' + date.getMonth() + '/' + date.getDate()
 			}).get({
 				success: res => {
-					if(!res.data.length){
+					if(!res.data.length){//如果当天没有记录
 						dbinsert.collection('signin').add({
 							data: {
 								openId: app.openid,
@@ -88,30 +92,35 @@ Page({
 								this.setData({
 									resId: res._id,
 								})
+								wx.hideLoading()
 								wx.showToast({
 									title: '签到成功'
 								})
-								console.log('签到成功，记录 _id: ', res._id)
+								console.log('签到成功，记录 _id:', res._id)
 							},
 							fail: err => {
+								wx.hideLoading()
 								wx.showToast({
 									icon: 'none',
 									title: '签到失败'
 								})
-								console.error('[数据库] [新增记录] 失败：', err)
+								console.error('[数据库] [新增记录] 失败:', err)
 							}
 						})
+					}	else{
+						wx.hideLoading()
+						wx.showToast({
+							title: '今日已签到',
+							icon:'none'
+						})
+						console.log('今日已签到,记录 _id:', res._id)
 					}
-					wx.showToast({
-						title: '今日已签到',
-						icon:'none'
-					})
-					console.log('今日已签到,记录 _id: ', res._id)
 					this.setData({
 						isSignIn: true
 					})
 				},
 				fail: err => {
+					wx.hideLoading()
 					wx.showToast({
 						icon: 'none',
 						title: '网络错误，请稍后再试'
@@ -120,6 +129,7 @@ Page({
 				}
 			})
 		}else{
+			wx.hideLoading()
 			wx.showToast({
 				title: '今日已签到',
 				icon:'none'
