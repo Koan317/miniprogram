@@ -1,1 +1,6 @@
 /* miniprogram/pages/myPage/myPage.wxss */
+
+.avatar{
+	width:50rpx;
+	height: 50rpx;
+}

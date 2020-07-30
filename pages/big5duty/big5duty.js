@@ -12,7 +12,7 @@ Page({
 		questionLen: 0, //问题个数
 		result: [], //测试结果
 		resultid: '', //结果ID
-		score:0//最后得分
+		score: 0 //最后得分
 	},
 
 	/**
@@ -48,8 +48,8 @@ Page({
 	},
 
 	onSubmit: function (e) {
-		var resultjson=e.detail.value
-		var radiolist = new Map()//Map
+		var resultjson = e.detail.value
+		var radiolist = new Map() //Map
 		for (let i of Object.keys(resultjson)) {
 			radiolist.set(i, parseInt(resultjson[i]))
 		}
@@ -57,8 +57,8 @@ Page({
 		var big5score = 0
 		var reversept = new Array(12).fill(0)
 		reversept[2] = reversept[5] = reversept[8] = reversept[10] = 1
-		for (let i=0;i<12;i++) {//记分
-			if(radiolist.get(String(i + 1))==0){
+		for (let i = 0; i < 12; i++) { //记分
+			if (radiolist.get(String(i + 1)) == 0) {
 				continue
 			}
 			if (reversept[i] == 1) {
@@ -70,7 +70,7 @@ Page({
 		const db = wx.cloud.database()
 		wx.showLoading({
 			title: '提交中',
-			mask:true
+			mask: true
 		})
 		db.collection('big5results').add({
 			data: {
@@ -83,17 +83,19 @@ Page({
 				this.setData({
 					result: [],
 					resultid: res._id,
-					score:big5score
+					score: big5score
 				})
 				wx.hideLoading()
 				wx.showToast({
-					title: '得分'+big5score+'分',
-					duration:2000,
-					success:function(){setTimeout(() => {
-						wx.navigateBack({
-							delta:1
-						})
-					}, 2000);}
+					title: '得分' + big5score + '分',
+					duration: 2000,
+					success: function () {
+						setTimeout(() => {
+							wx.navigateBack({
+								delta: 1
+							})
+						}, 2000);
+					}
 				})
 				console.log('[数据库] [新增记录] 成功，记录 _id: ', res._id)
 			},
