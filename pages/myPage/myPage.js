@@ -74,7 +74,11 @@ Page({
 		const dbselect = wx.cloud.database()
 		const dbinsert = wx.cloud.database()
 
-		if(!this.data.isSignIn){
+		if(!this.data.isSignIn){//如果此次会话中没签过到
+			/*此分支选项可优化云数据库的调取
+			**减少云数据库调取次数
+			**将闲得蛋疼的点签到没完的用户的操作全部放在本地进行
+			*/
 			dbselect.collection('signin').where({
 				_openid: app.openid,
 				signInDate: date.getFullYear() + '/' + date.getMonth() + '/' + date.getDate()
@@ -107,7 +111,7 @@ Page({
 								console.error('[数据库] [新增记录] 失败:', err)
 							}
 						})
-					}	else{
+					}	else{//如果当天有记录
 						wx.hideLoading()
 						wx.showToast({
 							title: '今日已签到',
@@ -128,7 +132,7 @@ Page({
 					console.error('[数据库] [新增记录] 失败：', err)
 				}
 			})
-		}else{
+		}else{//如果此次会话中已经签过到
 			wx.hideLoading()
 			wx.showToast({
 				title: '今日已签到',
