@@ -1,0 +1,8 @@
+/* miniprogram/pages/big5duty_result1.wxss */
+
+.btn-area{
+	color:red;
+}
+.navigator-hover {
+  color:blue;
+}

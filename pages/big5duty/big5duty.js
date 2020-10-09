@@ -68,6 +68,7 @@ Page({
 				big5score += radiolist.get(String(i + 1))
 			}
 		}//记分结束
+		/*
 		//小码编码（有bug未解决）
 		for (let index = 0,scortemp=big5score; scortemp < 2; index++) {
 			//将分数转化为2进制存进tinycode
@@ -115,6 +116,7 @@ Page({
 			temp=tinycode[index]*16+tinycode[index+1]*8+tinycode[index+2]*4+tinycode[index+3]*2+tinycode[index+4]
 			tinyEcode[index/5]=codenum[temp]
 		}
+		*/
 		//console.log(tinyEcode)
 		const db = wx.cloud.database()//读写云数据库
 		wx.showLoading({
@@ -126,7 +128,6 @@ Page({
 				openId: app.openid,
 				big5score: big5score,
 				result: e.detail.value
-				
 			},
 			success: res => {
 				// 在返回结果中会包含新创建的记录的 _id
@@ -141,9 +142,22 @@ Page({
 					duration: 2000,
 					success: function () {
 						setTimeout(() => {
-							wx.navigateBack({
-								delta: 1
-							})
+							if(big5score<31){
+								wx.navigateTo({
+									url: 'big5duty_result1/big5duty_result1',
+								})
+							}else if(big5score>40){
+								wx.navigateTo({
+									url: 'big5duty_result3/big5duty_result3',
+								})
+							}else{
+								wx.navigateTo({
+									url: 'big5duty_result2/big5duty_result2',
+								})
+							}
+							//wx.navigateBack({
+							//	delta: 1
+							//})
 						}, 2000);
 					}
 				})

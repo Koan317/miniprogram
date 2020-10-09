@@ -1,0 +1,13 @@
+<!--miniprogram/pages/big5duty_result3/big5duty_result3.wxml-->
+<text>您的责任维度分在高分区间，说明尽责性较高。
+结果解读：您可能责任感更强、更自律、更值得信赖。 对自己的能力是自信的；在做事前会三思而后行，不会想到什么做什么；在完成目标的过程中有良好的计划和条理性，可以高效并且有条不紊的尽力完成任务；很勤奋并且有目标感，对自己的工作生活有较高的要求以及抱负，很有进取心；在对待规矩、条例时，会严格遵守自己的道德原则，按照规矩办事。 
+
+科学依据：
+大五人格在过去的几十年里被心理学研究者们广泛研究，量表的五个维度（尽责性、神经质、外向性、开放性、宜人性）得到了心理学家们的广泛认同（John,  Naumann & Soto, 2008）。
+其中，尽责性是指我们控制、管理和调节自身冲动的方式, 是评估一个人在完成自己目标的过程中的组织性、坚毅性和动机的指标(McCrae ＆ Costa，1987)。高尽责性的人通常很自律，做事严谨且有条理，另外这类人也很遵守道德观念、更值得信赖等。
+
+John OP, Naumann LR, Soto CJ. Paradigm Shift to the integrative big five trait taxonomy: History, measurement, andconceptual issues. In John OP, Robins RW, Pervin LA,Handbook of Personality: Theory and Research(3th). NewYork: The Guilford Press, 2008. 114-158.
+McCrae，Ｒ． Ｒ． ，＆ Costa，P． T． ( 1987) ． Validation ofthe five-factor model of personality across instruments and observers． Journal of Personality andSocial Psychology，52( 1) ，81 － 90．</text>
+<view class="btn-area">
+	<navigator open-type="switchTab" url="/pages/index/index" hover-class="navigator-hover">返回主页</navigator>
+</view>
