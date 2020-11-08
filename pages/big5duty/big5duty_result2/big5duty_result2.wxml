@@ -1,5 +1,7 @@
 <!--miniprogram/pages/big5duty_result2/big5duty_result2.wxml-->
-<text>您的责任维度分在中分区间，说明尽责性处于中等水平。
+<text>
+	您的得分：{{score}}
+	您的责任维度分在中分区间，说明尽责性处于中等水平。
 结果解读：您对待生活及工作可能更随性、灵活。有时认为自己很有能力，但有时又觉得自己能力不足；通常在做事前会稍微考虑一下该做什么，有一定的计划性和条理性，但可能有些时候也会拖延，遇到困难时会产生退缩的想法；在满足于完成基本的工作的同时又有一定的上进心；有自己的道德原则，有一定的组织纪律性。 
 
 科学依据：
@@ -10,5 +12,6 @@ John OP, Naumann LR, Soto CJ. Paradigm Shift to the integrative big five trait t
 McCrae，Ｒ． Ｒ． ，＆ Costa，P． T． ( 1987) ． Validation ofthe five-factor model of personality across instruments and observers． Journal of Personality andSocial Psychology，52( 1) ，81 － 90．
 </text>
 <view class="btn-area">
-	<navigator open-type="switchTab" url="/pages/index/index" hover-class="navigator-hover">返回主页</navigator>
+	<!--<navigator open-type="switchTab" url="/pages/index/index" hover-class="navigator-hover">返回主页</navigator>-->
+	<navigator open-type="navigateBack" delta="2" hover-class="navigator-hover">返回主页</navigator>
 </view>

@@ -32,22 +32,7 @@
 			"provider": "wx92c68dae5a8bb046"
 		}
 	},
-	"tabBar": {
-		"color": "#bfbfbf",
-		"selectedColor": "#d81e06",
-		"list": [
-			{
-				"pagePath": "pages/index/index",
-				"iconPath": "images/dicengcaidan_shouye.png",
-				"selectedIconPath": "/images/dicengcaidan_shouye.png"
-			},
-			{
-				"pagePath": "pages/myPage/myPage",
-				"iconPath": "images/dicengcaidan_wo.png",
-				"selectedIconPath": "/images/dicengcaidan_wo.png"
-			}
-		]
-	},
+	
 	"sitemapLocation": "sitemap.json",
 	"style": "v2"
 }

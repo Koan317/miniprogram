@@ -1,14 +1,14 @@
 <!--index.wxml-->
 <image class="container" src="./danganbeijingtu.gif"/>
 
-<!--轮播图-->
+<!--轮播图
 <swiper class="swiper" autoplay="true" interval="5000" duration="1000">  
 	<swiper-item wx:for="{{movies}}" wx:key="swiper">
 		<navigator url="{{item.url}}" open-type="navigate">
 			<image src="{{item.src}}" mode="aspectFill"/>
 		</navigator>
 	</swiper-item>  
-</swiper>
+</swiper>-->
 
 <!-- 大五 -->
 <view class="fstButton">

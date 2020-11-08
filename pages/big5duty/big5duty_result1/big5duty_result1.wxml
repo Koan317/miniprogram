@@ -1,5 +1,7 @@
 <!--miniprogram/pages/big5duty_result1.wxml-->
-<text>您的责任维度分在低分区间，说明尽责性较差。
+<text>
+您的得分：{{score}}
+	您的责任维度分在低分区间，说明尽责性较差。
 结果解读：您可能在生活中爱马虎，对待工作及生活的态度较为懒散。对自己的能力不自信；在做事前不太会三思而后行，想到什么做什么；在完成目标的过程中缺少计划和条理性，甚至有些时候可能会拖延，遇到困难容易退缩、半途而废；满足于完成基本的工作，处于很悠闲的状态；在对待规矩、条例时的态度可能是漫不经心、不在意的，甚至有时还会觉得对自己是一种束缚。 
 
 科学依据：
@@ -10,5 +12,6 @@ John OP, Naumann LR, Soto CJ. Paradigm Shift to the integrative big five trait t
 McCrae，Ｒ． Ｒ． ，＆ Costa，P． T． ( 1987) ． Validation ofthe five-factor model of personality across instruments and observers． Journal of Personality andSocial Psychology，52( 1) ，81 － 90．
 </text>
 <view class="btn-area">
-	<navigator open-type="switchTab" url="/pages/index/index" hover-class="navigator-hover">返回主页</navigator>
+	<!--<navigator open-type="switchTab" url="/pages/index/index" hover-class="navigator-hover">返回主页</navigator>-->
+	<navigator open-type="navigateBack" delta="2" hover-class="navigator-hover">返回主页</navigator>
 </view>
