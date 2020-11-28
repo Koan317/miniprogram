@@ -1,0 +1,105 @@
+<!--miniprogram/pages/mainpage/mainpage.wxml-->
+
+<text class="titletext">全部测试</text>
+<navigator url="/pages/myPage/myPage" open-type="navigate">
+	<image src="./user-unlogin.png" class="avator" />
+</navigator>
+
+<swiper previous-margin="40rpx" next-margin="70rpx" class="suggestion">
+	<swiper-item>
+		<navigator url="/pages/big5duty/big5duty" open-type="navigate">
+			<image class="centerbutton" src="{{posterurl}}" mode="aspectFit" />
+		</navigator>
+	</swiper-item>
+	<swiper-item>
+		<navigator url="/pages/big5duty/big5duty" open-type="navigate">
+			<image class="centerbutton" src="{{posterurl}}" mode="aspectFit" />
+		</navigator>
+	</swiper-item>
+	<swiper-item>
+		<navigator url="/pages/big5duty/big5duty" open-type="navigate">
+			<image class="centerbutton" src="{{posterurl}}" mode="aspectFit" />
+		</navigator>
+	</swiper-item>
+</swiper>
+
+<div class="firstdiv">
+	<text class="subtitletext">尽责性测试</text>
+	<text class="explanation">本类测试的一句式说明</text>
+	<div class="subdiv">
+		<swiper next-margin="30rpx">
+			<swiper-item>
+				<navigator url="/pages/big5duty/big5duty" open-type="navigate">
+					<image class="leftbutton" src="../../images/big5duty.png" mode="aspectFit" />
+					<text class="maintext">这里是介绍，随便写点什么吧，这里最多写四行字，写多了就会越界，会很丑。</text>
+				</navigator>
+			</swiper-item>
+			<swiper-item>
+				<navigator url="/pages/big5duty/big5duty" open-type="navigate">
+					<image class="leftbutton" src="../../images/tatuhepai.png" mode="aspectFit" />
+					<text class="maintext">越界了也没关系，前四行正常显示，最后加一个省略号，其余删掉。</text>
+				</navigator>
+			</swiper-item>
+			<swiper-item>
+				<navigator url="/pages/big5duty/big5duty" open-type="navigate">
+					<image class="leftbutton" src="../../images/tatuhepai.png" mode="aspectFit" />
+					<text class="maintext">CEO是杠精CEO是杠精CEO是杠精CEO是杠精CEO是杠精CEO是杠精CEO是杠精…</text>
+				</navigator>
+			</swiper-item>
+		</swiper>
+	</div>
+</div>
+
+<div class="seconddiv">
+	<text class="subtitletext">情绪稳定性测试</text>
+	<text class="explanation">本类测试的一句式说明</text>
+	<div class="subdiv">
+		<swiper next-margin="30rpx">
+			<swiper-item>
+				<navigator url="/pages/big5duty/big5duty" open-type="navigate">
+					<image class="leftbutton" src="../../images/big5stability.png" mode="aspectFit" />
+					<text class="maintext">这里是介绍，随便写点什么吧，这里最多写四行字，写多了就会越界，会很丑。</text>
+				</navigator>
+			</swiper-item>
+			<swiper-item>
+				<navigator url="/pages/big5duty/big5duty" open-type="navigate">
+					<image class="leftbutton" src="../../images/tatuhepai.png" mode="aspectFit" />
+					<text class="maintext">越界了也没关系，前四行正常显示，最后加一个省略号，其余删掉。</text>
+				</navigator>
+			</swiper-item>
+			<swiper-item>
+				<navigator url="/pages/big5duty/big5duty" open-type="navigate">
+					<image class="leftbutton" src="../../images/tatuhepai.png" mode="aspectFit" />
+					<text class="maintext">CEO是杠精CEO是杠精CEO是杠精CEO是杠精CEO是杠精CEO是杠精CEO是杠精…</text>
+				</navigator>
+			</swiper-item>
+		</swiper>
+	</div>
+</div>
+
+<div class="thirddiv">
+	<text class="subtitletext">尽责类测试</text>
+	<text class="explanation">本类测试的一句式说明</text>
+	<div class="subdiv">
+		<swiper next-margin="30rpx">
+			<swiper-item>
+				<navigator url="/pages/big5duty/big5duty" open-type="navigate">
+					<image class="leftbutton" src="../../images/tatuhepai.png" mode="aspectFit" />
+					<text class="maintext">这里是介绍，随便写点什么吧，这里最多写四行字，写多了就会越界，会很丑。</text>
+				</navigator>
+			</swiper-item>
+			<swiper-item>
+				<navigator url="/pages/big5duty/big5duty" open-type="navigate">
+					<image class="leftbutton" src="../../images/tatuhepai.png" mode="aspectFit" />
+					<text class="maintext">越界了也没关系，前四行正常显示，最后加一个省略号，其余删掉。</text>
+				</navigator>
+			</swiper-item>
+			<swiper-item>
+				<navigator url="/pages/big5duty/big5duty" open-type="navigate">
+					<image class="leftbutton" src="../../images/tatuhepai.png" mode="aspectFit" />
+					<text class="maintext">CEO是杠精CEO是杠精CEO是杠精CEO是杠精CEO是杠精CEO是杠精CEO是杠精…</text>
+				</navigator>
+			</swiper-item>
+		</swiper>
+	</div>
+</div>

@@ -1,0 +1,9 @@
+<!--miniprogram/pages/big5duty/big5duty_report/big5duty_report.wxml-->
+
+<text>您的得分是{{score}}分</text>
+<view wx:for="{{report}}" wx:key="big5">
+	<text>{{item.Q}}</text>
+</view>
+<view class="btn-area">
+	<navigator open-type="navigateBack" delta="2" hover-class="navigator-hover">返回主页</navigator>
+</view>

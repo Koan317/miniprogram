@@ -1,24 +1,26 @@
 <!--miniprogram/pages/big5duty/big5duty.wxml-->
 
-<scroll-view scroll-y='true' style="height:{{height}}px">
-  <block class="introBlock">
-    <text class="introText">这里要写大五尽责性介绍，但是乙方似乎还没写好，所以我先随便写点什么吧</text>
-  </block>
-  <form bindsubmit="onSubmit" bindreset="onReset">
-    <!--<input hidden="true" name="questionLen" value="{{questionLen}}"/>-->
-    <view class="question" wx:for="{{question}}" wx:key="big5">
-      <text class="quesText">{{item.No}}. {{item.Q}}</text>
-			<!--<input hidden="true" name="No" value="{{item.No}}"/>-->
-      <radio-group class="radioGroup" name="{{item.No}}">
-        <radio value="5">5</radio>
-        <radio value="4">4</radio>
-        <radio value="3">3</radio>
-        <radio value="2">2</radio>
-        <radio value="1">1</radio>
-        <!--<radio value="0" checked="true">不作答</radio>-->
+<text class="title">尽责性测试</text>
+<text class="explain">这里要写大五尽责性介绍，但是乙方似乎还没写好，所以我先随便写点什么吧</text>
+<form bindsubmit="onSubmit">
+  <view class="question" wx:for="{{question}}" wx:key="big5">
+    <text class="quesText">{{item.No}}. {{item.Q}}</text>
+    <div class="table">
+      <div>完全同意</div>
+      <div>　　　　</div>
+      <div>说不清楚</div>
+      <div>　　　　</div>
+      <div>完全否认</div>
+    </div>
+    <div>
+      <radio-group class="table" name="{{item.No}}">
+        <radio value="5" />
+        <radio value="4" />
+        <radio value="3" />
+        <radio value="2" />
+        <radio value="1" />
       </radio-group>
-    </view>
-    <button class="submit" form-type="submit">提交</button>
-    <button class="reset" form-type="reset">重置</button>
-  </form>
-</scroll-view>
+    </div>
+  </view>
+  <button class="submit" form-type="submit">提交</button>
+</form>

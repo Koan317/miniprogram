@@ -1,16 +1,34 @@
 /* miniprogram/pages/big5duty/big5duty.wxss */
+.title {
+  font-size: 32px;
+  display: flex;
+  padding: 40rpx 40rpx 20rpx;
+}
 
-.question, .introBlock{
-	height: auto;
-  padding: 0 0 0 40rpx;
+.explain {
+  font-size: 14px;
+  display: flex;
+  padding: 0 40rpx 0;
+  color: #bbbbbb;
+}
+
+.question {
+  height: auto;
+  padding: 20rpx 40rpx 20rpx;
   flex-direction: column;
   align-items: flex-start;
   box-sizing: border-box;
+  line-height: 28px;
 }
 
-.quesText, .introText{
-	width: 100%;
-  line-height: 52px;
-  font-size: 34rpx;
-  color: #007aff;
+.quesText {
+  font-size: 18px;
+}
+
+.table {
+  justify-content: space-around;
+  font-size:12px;
+  display: flex;
+  padding: 10rpx 0 0;
+  flex-direction: row;
 }

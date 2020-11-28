@@ -9,10 +9,10 @@ Page({
 	data: {
 		openid: '', //用户ID
 		question: [], //题目
-		questionLen: 0, //问题个数
 		result: [], //测试结果
 		resultid: '', //结果ID
-		score: 0 //最后得分
+		score: 0, //最后得分
+		report:''
 	},
 
 	/**
@@ -35,9 +35,7 @@ Page({
 		db.collection('big5duty').doc('qA2Namne2pJkUS2YQFjRNV6kPvQr9LbenOfqzlkr3qaepWMA').get({
 			success: res => {
 				this.setData({
-					//question: JSON.stringify(res.data.Quiz, null, 2)
-					question: res.data.Quiz,
-					questionLen: res.data.Quiz.length
+					question: res.data.Quiz
 				})
 				console.log('[数据库] [查询记录] 成功: ', res.data._id)
 			},
@@ -48,26 +46,25 @@ Page({
 	},
 
 	onSubmit: function (e) {
-		var resultjson = e.detail.value//截取传送进来的信息中的需要部分，存进一个变量里
+		var resultjson = e.detail.value //截取传送进来的信息中的需要部分，存进一个变量里
 		var radiolist = new Map() //创建一个Map
-		var flag=false//用来存储是否有未答项	
-		for (let i of Object.keys(resultjson)) {//将截取的信息传进Map里方便处理
-			if(!parseInt(resultjson[i])){
-				flag=true
-				console.log('radiolist:',parseInt(radiolist[i]))
+		var flag = false //用来存储是否有未答项	
+		for (let i of Object.keys(resultjson)) { //将截取的信息传进Map里方便处理
+			if (!parseInt(resultjson[i])) {
+				flag = true
+				console.log('radiolist:', parseInt(radiolist[i]))
 			}
-
 			radiolist.set(i, parseInt(resultjson[i]))
 		}
 
-		if(flag==true){
+		if (flag == true) {
 			wx.showToast({
 				title: '有题目未作答',
 			})
-		}else{
-			var tinycode=new Array(140).fill(0)//小码的二进制
-			var big5score = 0//得分
-			var reversept = new Array(12).fill(0)//反向记分的标记
+		} else {
+			var tinycode = new Array(140).fill(0) //小码的二进制
+			var big5score = 0 //得分
+			var reversept = new Array(12).fill(0) //反向记分的标记
 			reversept[2] = reversept[5] = reversept[8] = reversept[10] = 1
 			for (let i = 0; i < 12; i++) { //记分开始
 				if (radiolist.get(String(i + 1)) == 0) {
@@ -78,7 +75,7 @@ Page({
 				} else {
 					big5score += radiolist.get(String(i + 1))
 				}
-			}//记分结束
+			} //记分结束
 			/*
 			//小码编码（有bug未解决）
 			for (let index = 0,scortemp=big5score; scortemp < 2; index++) {
@@ -129,7 +126,7 @@ Page({
 			}
 			*/
 			//console.log(tinyEcode)
-			const db = wx.cloud.database()//读写云数据库
+			const db = wx.cloud.database() //读写云数据库
 			wx.showLoading({
 				title: '提交中',
 				mask: true
@@ -153,22 +150,9 @@ Page({
 						duration: 2000,
 						success: function () {
 							setTimeout(() => {
-								if(big5score<31){
-									wx.navigateTo({
-										url: 'big5duty_result1/big5duty_result1?score='+big5score,
-									})
-								}else if(big5score>40){
-									wx.navigateTo({
-										url: 'big5duty_result3/big5duty_result3?score='+big5score,
-									})
-								}else{
-									wx.navigateTo({
-										url: 'big5duty_result2/big5duty_result2?score='+big5score,
-									})
-								}
-								//wx.navigateBack({
-								//	delta: 1
-								//})
+								wx.navigateTo({
+									url: 'big5duty_report/big5duty_report?score=' + big5score
+								})
 							}, 2000);
 						}
 					})

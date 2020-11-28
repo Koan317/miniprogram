@@ -1,0 +1,123 @@
+/* miniprogram/pages/mainpage/mainpage.wxss */
+.titletext {
+	font-size: 64rpx;
+	position: absolute;
+	top: 40rpx;
+	left: 40rpx;
+}
+
+.avator{
+	position: absolute;
+	top:40rpx;
+	left:646rpx;
+	height:64rpx;
+	width:64rpx;
+}
+
+.suggestion {
+	position: absolute;
+	height: 266rpx;
+	width: 750rpx;
+	top: 160rpx;
+}
+
+.subtitletext {
+	font-size: 48rpx;
+	position: absolute;
+	top: 20rpx;
+}
+
+.explanation {
+	font-size: 32rpx;
+	position: absolute;
+	top: 98rpx;
+	color: #bbbbbb;
+}
+
+.maintext {
+	font-size: 32rpx;
+	position: absolute;
+	height: 189rpx;
+	width: 315rpx;
+	left: 355rpx;
+}
+
+.firstdiv {
+	position: absolute;
+	top: 460rpx;
+	left: 40rpx;
+	height: 400rpx;
+	width: 710rpx;
+}
+
+.seconddiv {
+	position: absolute;
+	top: 860rpx;
+	left: 40rpx;
+	height: 400rpx;
+	width: 710rpx;
+}
+
+.thirddiv {
+	position: absolute;
+	top: 1260rpx;
+	left: 40rpx;
+	height: 400rpx;
+	width: 710rpx;
+}
+
+.fourthdiv {
+	position: absolute;
+	top: 1660rpx;
+	left: 40rpx;
+	height: 400rpx;
+	width: 710rpx;
+}
+
+.subdiv {
+	position: absolute;
+	top: 160rpx;
+	height: 189rpx;
+	width: 710rpx;
+}
+
+.leftbutton {
+	border-style: none;
+	position: absolute;
+	height: 189rpx;
+	width: 315rpx;
+}
+
+.rightbutton {
+	border-style: none;
+	position: absolute;
+	height: 189rpx;
+	width: 315rpx;
+	left: 355rpx;
+}
+
+.centerbutton {
+	border-style: none;
+	position: absolute;
+	height: 266rpx;
+	width: 609rpx;
+	left: 40rpx;
+}
+
+@media (prefers-color-scheme: dark) {
+	.titletext {
+		color: #ffffff;
+	}
+
+	.subtitletext {
+		color:#ffffff;
+	}
+
+	.explanation {
+		color: #999999;
+	}
+
+	.maintext {
+		color:#ffffff;
+	}
+}

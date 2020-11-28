@@ -1,0 +1,14 @@
+{
+	"light": {
+		"winBgColor": "#ffffff",
+		"winBgTxt": "light",
+		"winNaviBarBgColor": "#f6f6f6",
+		"winNaviBarTxt": "black"
+	},
+	"dark":{
+		"winBgColor": "#000000",
+		"winBgTxt": "dark",
+		"winNaviBarBgColor": "#090909",
+		"winNaviBarTxt": "white"
+	}
+}
