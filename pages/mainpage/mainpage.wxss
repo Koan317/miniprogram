@@ -6,12 +6,21 @@
 	left: 40rpx;
 }
 
-.avator{
+.avatarview {
 	position: absolute;
-	top:40rpx;
-	left:646rpx;
-	height:64rpx;
-	width:64rpx;
+	top: 40rpx;
+	left: 620rpx;
+	height: 90rpx;
+	width: 90rpx;
+	border-radius: 50%;
+	overflow: hidden;
+	justify-content: center;
+}
+
+.avatar {
+	position: absolute;
+	height: 90rpx;
+	width: 90rpx;
 }
 
 .suggestion {
@@ -31,14 +40,14 @@
 	font-size: 32rpx;
 	position: absolute;
 	top: 98rpx;
-	color: #bbbbbb;
+	color: #999999;
 }
 
 .maintext {
 	font-size: 32rpx;
 	position: absolute;
 	height: 189rpx;
-	width: 315rpx;
+	width: 300rpx;
 	left: 355rpx;
 }
 
@@ -110,7 +119,7 @@
 	}
 
 	.subtitletext {
-		color:#ffffff;
+		color: #ffffff;
 	}
 
 	.explanation {
@@ -118,6 +127,6 @@
 	}
 
 	.maintext {
-		color:#ffffff;
+		color: #ffffff;
 	}
 }

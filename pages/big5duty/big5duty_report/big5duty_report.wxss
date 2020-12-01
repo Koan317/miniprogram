@@ -1,8 +1,0 @@
-/* miniprogram/pages/big5duty/big5duty_report/big5duty_report.wxss */
-
-.btn-area{
-	color:red;
-}
-.navigator-hover {
-  color:blue;
-}

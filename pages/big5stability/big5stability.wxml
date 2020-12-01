@@ -1,0 +1,28 @@
+<!--miniprogram/pages/big5stability/big5stability.wxml-->
+<text class="title">稳定性测试</text>
+<text class="explain" decode="{{true}}">
+  &emsp;&emsp;情绪稳定性或神经质性（Neuroticism）是心理学评判一个人人格特质的指标之一，指人的情绪状态随外界或内部条件变化而产生波动的情况，反映每个人情感调节的过程，是反应人的心理健康的重要指标（彭聃龄，2012）。
+  &emsp;&emsp;另外，Costa(1980)和McCrae(1991)的研究表明，情绪稳定性与人的主观幸福感存在显著相关，情绪比较稳定的人比较不容易产生内心的冲突，主观幸福感较高。
+</text>
+<form bindsubmit="onSubmit">
+  <view class="question" wx:for="{{question}}" wx:key="big5">
+    <text class="quesText">{{item.No}}. {{item.Q}}</text>
+    <div class="table">
+      <div>完全同意</div>
+      <div>　　　　</div>
+      <div>说不清楚</div>
+      <div>　　　　</div>
+      <div>完全否认</div>
+    </div>
+    <div>
+      <radio-group class="table" name="{{item.No}}">
+        <radio value="5" />
+        <radio value="4" />
+        <radio value="3" />
+        <radio value="2" />
+        <radio value="1" />
+      </radio-group>
+    </div>
+  </view>
+  <button class="submit" form-type="submit">提交</button>
+</form>

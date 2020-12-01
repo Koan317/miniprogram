@@ -1,11 +1,10 @@
 {
 	"pages": [
 		"pages/mainpage/mainpage",
-		"pages/databaseGuide/databaseGuide",
-		"pages/addFunction/addFunction",
 		"pages/big5duty/big5duty",
 		"pages/myPage/myPage",
-		"pages/big5duty/big5duty_report/big5duty_report"
+		"pages/big5report/big5report",
+		"pages/big5stability/big5stability"
 	],
 	"window": {
 		"backgroundColor": "@winBgColor",

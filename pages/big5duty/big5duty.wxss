@@ -9,7 +9,7 @@
   font-size: 14px;
   display: flex;
   padding: 0 40rpx 0;
-  color: #bbbbbb;
+  color: #999999;
 }
 
 .question {

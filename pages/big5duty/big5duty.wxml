@@ -1,7 +1,7 @@
 <!--miniprogram/pages/big5duty/big5duty.wxml-->
 
 <text class="title">尽责性测试</text>
-<text class="explain">这里要写大五尽责性介绍，但是乙方似乎还没写好，所以我先随便写点什么吧</text>
+<text class="explain" decode="{{true}}">&emsp;&emsp;尽责性是指我们控制、管理和调节自身冲动的方式, 是评估一个人在完成自己目标的过程中的组织性、坚毅性和动机的指标(McCrae ＆ Costa, 1987)。高尽责性的人通常很自律，做事严谨且有条理，另外这类人也很遵守道德观念、更值得信赖等。</text>
 <form bindsubmit="onSubmit">
   <view class="question" wx:for="{{question}}" wx:key="big5">
     <text class="quesText">{{item.No}}. {{item.Q}}</text>

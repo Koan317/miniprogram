@@ -1,0 +1,23 @@
+/* miniprogram/pages/big5duty/big5duty_report/big5duty_report.wxss */
+
+.score {
+	font-size: 64rpx;
+	display: flex;
+	padding: 40rpx;
+}
+
+.maintext {
+	font-size: 32rpx;
+	display: flex;
+	padding: 10rpx 40rpx 10rpx;
+}
+
+.btn-area {
+	color: red;
+	font-size:48rpx;
+	text-align: center;
+}
+
+.navigator-hover {
+	color: blue;
+}

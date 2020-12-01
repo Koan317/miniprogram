@@ -5,8 +5,6 @@ Page({
 	 * 页面的初始数据
 	 */
 	data: {
-		avatarUrl: './user-unlogin.png',
-		userInfo: {},
 		logged: false,
 		resId: '',
 		isSignIn: false
@@ -15,40 +13,8 @@ Page({
 	/**
 	 * 生命周期函数--监听页面加载
 	 */
-	onLoad: function (options) {
-		if (!wx.cloud) {
-			wx.redirectTo({
-				url: '../chooseLib/chooseLib',
-			})
-			return
-		}
+	onLoad: function () {
 
-		// 获取用户信息
-		wx.getSetting({
-			success: res => {
-				if (res.authSetting['scope.userInfo']) {
-					// 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
-					wx.getUserInfo({
-						success: res => {
-							this.setData({
-								avatarUrl: res.userInfo.avatarUrl,
-								userInfo: res.userInfo
-							})
-						}
-					})
-				}
-			}
-		})
-
-		function v(e) {
-			if (!this.data.logged && e.detail.userInfo) {
-				this.setData({
-					logged: true,
-					avatarUrl: e.detail.userInfo.avatarUrl,
-					userInfo: e.detail.userInfo
-				})
-			}
-		}
 	},
 
 	/**
@@ -65,26 +31,26 @@ Page({
 
 	},
 
-	onSignIn() {//签到，其中getMonth()方法返回值范围是0-11
+	onSignIn() { //签到，其中getMonth()方法返回值范围是0-11
 		wx.showLoading({
 			title: '正在签到',
-			mask:true
+			mask: true
 		})
 		var date = new Date()
 		const dbselect = wx.cloud.database()
 		const dbinsert = wx.cloud.database()
 
-		if(!this.data.isSignIn){//如果此次会话中没签过到
+		if (!this.data.isSignIn) { //如果此次会话中没签过到
 			/*此分支选项可优化云数据库的调取
-			**减少云数据库调取次数
-			**将闲得蛋疼的点签到没完的用户的操作全部放在本地进行
-			*/
+			 **减少云数据库调取次数
+			 **将闲得蛋疼的点签到没完的用户的操作全部放在本地进行
+			 */
 			dbselect.collection('signin').where({
 				_openid: app.openid,
 				signInDate: date.getFullYear() + '/' + date.getMonth() + '/' + date.getDate()
 			}).get({
 				success: res => {
-					if(!res.data.length){//如果当天没有记录
+					if (!res.data.length) { //如果当天没有记录
 						dbinsert.collection('signin').add({
 							data: {
 								openId: app.openid,
@@ -111,11 +77,11 @@ Page({
 								console.error('[数据库] [新增记录] 失败:', err)
 							}
 						})
-					}	else{//如果当天有记录
+					} else { //如果当天有记录
 						wx.hideLoading()
 						wx.showToast({
 							title: '今日已签到',
-							icon:'none'
+							icon: 'none'
 						})
 						console.log('今日已签到,记录 _id:', res._id)
 					}
@@ -132,26 +98,30 @@ Page({
 					console.error('[数据库] [新增记录] 失败：', err)
 				}
 			})
-		}else{//如果此次会话中已经签过到
+		} else { //如果此次会话中已经签过到
 			wx.hideLoading()
 			wx.showToast({
 				title: '今日已签到',
-				icon:'none'
+				icon: 'none'
 			})
-		} 
+		}
 	},
 	/**
 	 * 生命周期函数--监听页面隐藏
 	 */
 	onHide: function () {
-
+		this.setData({
+			isSignIn: false
+		})
 	},
 
 	/**
 	 * 生命周期函数--监听页面卸载
 	 */
 	onUnload: function () {
-
+		this.setData({
+			isSignIn: false
+		})
 	},
 
 	/**

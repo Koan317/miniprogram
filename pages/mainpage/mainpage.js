@@ -1,4 +1,6 @@
 // miniprogram/pages/mainpage/mainpage.js
+const app = getApp()
+
 Page({
 
 	/**
@@ -16,11 +18,11 @@ Page({
 			success: (result) => {
 				if (result.theme == 'light') {
 					this.setData({
-						posterurl: '../../images/haibao_day.png'
+						posterurl: '/images/haibao_day.png'
 					})
 				} else {
 					this.setData({
-						posterurl: '../../images/haibao_night.png'
+						posterurl: '/images/haibao_night.png'
 					})
 				}
 			},
@@ -41,11 +43,11 @@ Page({
 		wx.onThemeChange((result) => {
 			if (result.theme == 'light') {
 				this.setData({
-					posterurl: '../../images/haibao_day.jpg'
+					posterurl: '/images/haibao_day.png'
 				})
 			} else {
 				this.setData({
-					posterurl: '../../images/haibao_night.jpg'
+					posterurl: '/images/haibao_night.png'
 				})
 			}
 		})

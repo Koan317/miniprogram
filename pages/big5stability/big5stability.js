@@ -1,7 +1,8 @@
-// miniprogram/pages/big5duty/big5duty.js
+// miniprogram/pages/big5stability/big5stability.js
 const app = getApp()
 
 Page({
+
 	/**
 	 * 页面的初始数据
 	 */
@@ -26,7 +27,7 @@ Page({
 
 		const db = wx.cloud.database()
 		// 查询当前用户所有的 counters
-		db.collection('big5').doc('f22b28525fc25b00005cbc372a2a6521').get({
+		db.collection('big5').doc('f22b28525fc25b63005cbc391a80da30').get({
 			success: res => {
 				this.setData({
 					question: res.data.Quiz
@@ -53,9 +54,9 @@ Page({
 		for (let i of Object.keys(resultjson)) { //将截取的信息传进Map里方便处理
 			if (!parseInt(resultjson[i])) {
 				flag = true
+				//console.log('radiolist:', parseInt(radiolist[i]))
 			}
 			radiolist.set(i, parseInt(resultjson[i]))
-			//console.log('radiolist:', radiolist.get(String(i)))
 		}
 
 		if (flag == true) {
@@ -71,9 +72,13 @@ Page({
 		} else {
 			var tinycode = new Array(140).fill(0) //小码的二进制
 			var big5score = 0 //得分
-			var reversept = new Array(12).fill(0) //反向记分的标记
-			reversept[2] = reversept[5] = reversept[8] = reversept[10] = 1
-			for (let i = 0; i < 12; i++) { //记分开始
+			var reversept = new Array(21).fill(0) //反向记分的标记
+			reversept[0] = reversept[3] = reversept[6] = reversept[9] = reversept[13] = reversept[14]
+			reversept[15] = reversept[16] = reversept[17] = reversept[18] = reversept[19] = reversept[20] = 1
+			for (let i = 0; i < 21; i++) { //记分开始
+				if (radiolist.get(String(i + 1)) == 0) {
+					continue
+				}
 				if (reversept[i] == 1) {
 					big5score += (-(radiolist.get(String(i + 1)) - 6))
 				} else {
@@ -135,7 +140,7 @@ Page({
 				title: '提交中',
 				mask: true
 			})
-			db.collection('big5dutyresults').add({
+			db.collection('big5stabilityresults').add({
 				data: {
 					openId: app.openid,
 					big5score: big5score,
@@ -155,7 +160,7 @@ Page({
 						success: function () {
 							setTimeout(() => {
 								wx.navigateTo({
-									url: '/pages/big5report/big5report?score=' + big5score + '&type=big5duty'
+									url: '/pages/big5report/big5report?score=' + big5score + '&type=big5stability'
 								})
 							}, 2000);
 						}
@@ -165,7 +170,7 @@ Page({
 				fail: err => {
 					wx.showToast({
 						icon: 'none',
-						title: '提交失败，请检查网络'
+						title: '提交失败'
 					})
 					console.error('[数据库] [新增记录] 失败：', err)
 				}
