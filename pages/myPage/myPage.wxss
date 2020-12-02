@@ -1,6 +1,20 @@
 /* miniprogram/pages/myPage/myPage.wxss */
+.avatarView {
+	position: absolute;
+	top: 40rpx;
+	left: 620rpx;
+	height: 90rpx;
+	width: 90rpx;
+	border-radius: 50%;
+	overflow: hidden;
+	justify-content: center;
+}
 
-.avatar{
-	width:50rpx;
-	height: 50rpx;
+.avatar {
+	width: 90rpx;
+	height: 90rpx;
+}
+
+.calendar--cwj-icon {
+	transform: scale(1.5);
 }

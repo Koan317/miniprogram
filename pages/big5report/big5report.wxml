@@ -4,6 +4,6 @@
 <view wx:for="{{report}}" wx:key="big5">
 	<text class="maintext">{{item.Q}}</text>
 </view>
-<view class="btn-area">
+<view>
 	<navigator open-type="navigateBack" delta="2" hover-class="navigator-hover">返回主页</navigator>
 </view>

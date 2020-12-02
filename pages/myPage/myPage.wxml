@@ -1,5 +1,7 @@
 <!--miniprogram/pages/myPage/myPage.wxml-->
-<text>这个页面是个人主页，就先随便写点什么吧，反正乙方还没设计好</text>
-<open-data type="userAvatarUrl" class="avatar" />
-<calendar />
-<button bindtap="onSignIn">简易的签到按钮</button>
+
+<view class="avatarView">
+	<open-data type="userAvatarUrl" class="avatar" />
+</view>
+<calendar days-color="{{daysColor}}" weeks-type="cn"/>
+<button bindtap="onSignIn">今日签到</button>

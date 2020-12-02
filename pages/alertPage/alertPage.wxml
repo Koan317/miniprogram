@@ -1,0 +1,4 @@
+<!--miniprogram/pages/alertPage/alertPage.wxml-->
+<div class="divFrame"><text class="alertText">请勿使用平板电脑
+	运行该小程序</text></div>
+	

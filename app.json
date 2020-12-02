@@ -4,7 +4,8 @@
 		"pages/big5duty/big5duty",
 		"pages/myPage/myPage",
 		"pages/big5report/big5report",
-		"pages/big5stability/big5stability"
+		"pages/big5stability/big5stability",
+		"pages/alertPage/alertPage"
 	],
 	"window": {
 		"backgroundColor": "@winBgColor",

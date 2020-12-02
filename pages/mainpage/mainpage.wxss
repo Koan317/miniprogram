@@ -18,7 +18,6 @@
 }
 
 .avatar {
-	position: absolute;
 	height: 90rpx;
 	width: 90rpx;
 }
