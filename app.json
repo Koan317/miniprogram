@@ -5,7 +5,9 @@
 		"pages/myPage/myPage",
 		"pages/big5report/big5report",
 		"pages/big5stability/big5stability",
-		"pages/alertPage/alertPage"
+		"pages/alertPage/alertPage",
+		"pages/tatueHarmony/tatueHarmony",
+		"pages/scanNaviPage/scanNaviPage"
 	],
 	"window": {
 		"backgroundColor": "@winBgColor",

@@ -1,0 +1,5 @@
+<!--miniprogram/pages/scanNaviPage/scanNaviPage.wxml-->
+<navigator url="{{url}}" open-type="navigate">
+	<button>直接参与匹配测试</button>
+</navigator>
+<button bindtap="onScan">扫描他人测试结果</button>

@@ -31,10 +31,10 @@ Page({
 							this.setData({
 								report: res.data.Quiz
 							})
-							console.log('[数据库] [查询记录] 成功: ', res.data._id)
+							/*console.log('[数据库] [查询记录] 成功: ', res.data._id)
 						},
 						fail: err => {
-							console.error('[数据库] [查询记录] 失败：', err)
+							console.error('[数据库] [查询记录] 失败：', err)*/
 						}
 					})
 				} else if (options.score > 40) { //高分区间
@@ -43,10 +43,6 @@ Page({
 							this.setData({
 								report: res.data.Quiz
 							})
-							console.log('[数据库] [查询记录] 成功: ', res.data._id)
-						},
-						fail: err => {
-							console.error('[数据库] [查询记录] 失败：', err)
 						}
 					})
 				} else { //否则是中分区间
@@ -55,17 +51,13 @@ Page({
 							this.setData({
 								report: res.data.Quiz
 							})
-							console.log('[数据库] [查询记录] 成功: ', res.data._id)
-						},
-						fail: err => {
-							console.error('[数据库] [查询记录] 失败：', err)
 						}
 					})
 				}
 				break;
-				/**
-				 * ------------------------大五情绪------------------------
-				 */
+			/**
+			 * ------------------------大五情绪------------------------
+			 */
 			case 'big5stability':
 				if (options.score < 55) { //低分区间
 					db.collection('big5').doc('b3a8af275fc26e82002fcc1d559f6ee6').get({
@@ -73,10 +65,6 @@ Page({
 							this.setData({
 								report: res.data.Quiz
 							})
-							console.log('[数据库] [查询记录] 成功: ', res.data._id)
-						},
-						fail: err => {
-							console.error('[数据库] [查询记录] 失败：', err)
 						}
 					})
 				} else if (options.score > 76) { //高分区间
@@ -85,10 +73,6 @@ Page({
 							this.setData({
 								report: res.data.Quiz
 							})
-							console.log('[数据库] [查询记录] 成功: ', res.data._id)
-						},
-						fail: err => {
-							console.error('[数据库] [查询记录] 失败：', err)
 						}
 					})
 				} else { //否则是中分区间
@@ -97,10 +81,6 @@ Page({
 							this.setData({
 								report: res.data.Quiz
 							})
-							console.log('[数据库] [查询记录] 成功: ', res.data._id)
-						},
-						fail: err => {
-							console.error('[数据库] [查询记录] 失败：', err)
 						}
 					})
 				}
