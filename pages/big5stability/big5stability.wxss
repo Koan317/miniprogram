@@ -1,4 +1,4 @@
-/* miniprogram/pages/big5stability/big5stability.wxss */
+/* miniprogram/pages/big5Stability/big5Stability.wxss */
 .title {
 	font-size: 32px;
 	display: flex;

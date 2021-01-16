@@ -1,2 +1,31 @@
 <!--miniprogram/pages/tatueHarmony/tatueHarmony.wxml-->
-<text>还没做好，回头再做</text>
+
+<text class="title">獭兔合拍</text>
+<button style="font-size:30rpx;margin-bottom:0rpx;" open-type="getUserInfo" bindgetuserinfo="onGetUserInfo">授权获取微信昵称</button>
+<text class="explain" decode="{{true}}">
+	&emsp;&emsp;獭兔合拍是一个用来探索情侣之间是否存在矛盾隐患的测试，帮助你们提前发现问题、协力解决问题、提高婚恋生活质量。本测试满分100分，最低分0分。我们不谈灵魂伴侣，我们不讲物质匹配，我们只认自己的内心（缘起缘落）。
+	&emsp;&emsp;獭兔合拍单身版是一个用来描绘未来伴侣画像的测试，。本测试满分100分，最低分0分。我们不谈灵魂伴侣，我们不讲物质匹配，我们只认自己的内心（缘起缘落）。
+
+</text>
+<form bindsubmit="onSubmit">
+	<view class="question" wx:for="{{question}}" wx:key="big5">
+		<text class="quesText">{{item.No}}. {{item.Q}}</text>
+		<div class="table">
+			<div>完全同意</div>
+			<div>　　　　</div>
+			<div>说不清楚</div>
+			<div>　　　　</div>
+			<div>我不同意</div>
+		</div>
+		<div>
+			<radio-group class="table" name="{{item.No}}">
+				<radio value="5" />
+				<radio value="4" />
+				<radio value="3" />
+				<radio value="2" />
+				<radio value="1" />
+			</radio-group>
+		</div>
+	</view>
+	<button class="submit" form-type="submit">提交</button>
+</form>

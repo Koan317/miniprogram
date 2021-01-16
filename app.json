@@ -1,10 +1,10 @@
 {
 	"pages": [
-		"pages/mainpage/mainpage",
-		"pages/big5duty/big5duty",
+		"pages/mainPage/mainPage",
+		"pages/big5Duty/big5Duty",
 		"pages/myPage/myPage",
-		"pages/big5report/big5report",
-		"pages/big5stability/big5stability",
+		"pages/testReport/testReport",
+		"pages/big5Stability/big5Stability",
 		"pages/alertPage/alertPage",
 		"pages/tatueHarmony/tatueHarmony",
 		"pages/scanNaviPage/scanNaviPage"

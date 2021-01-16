@@ -13,7 +13,11 @@ App({
         traceUser: true,
       })
     }
-
     this.globalData = {}
+  },
+  onPageNotFound: function (res) {
+    wx.redirectTo({
+      url: 'pages/alertPage/alertPage?flag=404'
+    })
   }
 })

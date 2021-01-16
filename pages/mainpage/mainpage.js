@@ -1,4 +1,4 @@
-// miniprogram/pages/mainpage/mainpage.js
+// miniprogram/pages/mainPage/mainPage.js
 const app = getApp()
 
 Page({
@@ -7,13 +7,13 @@ Page({
 	 * 页面的初始数据
 	 */
 	data: {
-		posterurl: ''
+		posterUrl: ''
 	},
 
 	/**
 	 * 生命周期函数--监听页面加载
 	 */
-	onLoad: function (options) {
+	onLoad: function () {
 		wx.getSystemInfo({
 			success: (result) => {
 				if(result.screenHeight>800){
@@ -23,11 +23,11 @@ Page({
 				}
 				if (result.theme == 'light') {
 					this.setData({
-						posterurl: '/images/haibao_day.png'
+						posterUrl: '/images/tatueHarmonyDay.png'
 					})
 				} else {
 					this.setData({
-						posterurl: '/images/haibao_night.png'
+						posterUrl: '/images/tatueHarmonyNight.png'
 					})
 				}
 			},
@@ -41,11 +41,11 @@ Page({
 		wx.onThemeChange((result) => {
 			if (result.theme == 'light') {
 				this.setData({
-					posterurl: '/images/haibao_day.png'
+					posterUrl: '/images/tatueHarmonyDay.png'
 				})
 			} else {
 				this.setData({
-					posterurl: '/images/haibao_night.png'
+					posterUrl: '/images/tatueHarmonyNight.png'
 				})
 			}
 		})

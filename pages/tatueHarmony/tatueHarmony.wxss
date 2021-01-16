@@ -1,1 +1,34 @@
 /* miniprogram/pages/tatueHarmony/tatueHarmony.wxss */
+.title {
+  font-size: 32px;
+  display: flex;
+  padding: 40rpx 40rpx 20rpx;
+}
+
+.explain {
+  font-size: 14px;
+  display: flex;
+  padding: 0 40rpx 0;
+  color: #999999;
+}
+
+.question {
+  height: auto;
+  padding: 20rpx 40rpx 20rpx;
+  flex-direction: column;
+  align-items: flex-start;
+  box-sizing: border-box;
+  line-height: 28px;
+}
+
+.quesText {
+  font-size: 18px;
+}
+
+.table {
+  justify-content: space-around;
+  font-size:12px;
+  display: flex;
+  padding: 10rpx 0 0;
+  flex-direction: row;
+}

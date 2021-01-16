@@ -5,18 +5,17 @@ Page({
 	 * 页面的初始数据
 	 */
 	data: {
-		logged: false,
 		resId: '',
-		isSignIn: false,
+		isLogin: false,
 		daysColor: []
 	},
 
 	/**
 	 * 生命周期函数--监听页面加载
 	 */
-	onLoad: function () {
-		const dbselect = wx.cloud.database()
-		dbselect.collection('signin').where({
+	onLoad: function () {//极点日历
+		const dbSelect = wx.cloud.database()
+		dbSelect.collection('login').where({
 			_openid: app.openid,
 		}).get({
 			success: res => {
@@ -43,14 +42,14 @@ Page({
 		})
 	},
 
-	onSignIn() { //签到，其中getMonth()方法返回值范围是0-11
+	onLogin() { //签到，其中getMonth()方法返回值范围是0-11
 		wx.showLoading({
 			title: '正在签到',
 			mask: true
 		})
 		var date = new Date()
-		const dbselect = wx.cloud.database()
-		const dbinsert = wx.cloud.database()
+		const dbSelect = wx.cloud.database()
+		const dbInsert = wx.cloud.database()
 
 		if (!this.data.isSignIn) { //如果此次会话中没签过到
 			/**
@@ -58,7 +57,7 @@ Page({
 			 * 减少云数据库调取次数
 			 * 将闲得蛋疼的点签到没完的用户的操作全部放在本地进行
 			 */
-			dbselect.collection('signin').where({
+			dbSelect.collection('login').where({
 				_openid: app.openid,
 				signInYear: date.getFullYear(),
 				signInMonth: date.getMonth() + 1,
@@ -66,7 +65,7 @@ Page({
 			}).get({
 				success: res => {
 					if (!res.data.length) { //如果当天没有记录
-						dbinsert.collection('signin').add({
+						dbInsert.collection('login').add({
 							data: {
 								openId: app.openid,
 								signInYear: date.getFullYear(),
@@ -77,15 +76,10 @@ Page({
 								signInSec: date.getSeconds()
 							},
 							success: res => {
-								// 在返回结果中会包含新创建的记录的 _id
-								this.setData({
-									resId: res._id,
-								})
 								wx.hideLoading()
 								wx.showToast({
 									title: '签到成功'
 								})
-								console.log('签到成功，记录 _id:', res._id)
 							},
 							fail: err => {
 								wx.hideLoading()
@@ -93,7 +87,7 @@ Page({
 									icon: 'none',
 									title: '签到失败'
 								})
-								console.error('[数据库] [新增记录] 失败:', err)
+								console.error('[login] [新增记录] 失败：', err)
 							}
 						})
 					} else { //如果当天有记录
@@ -104,7 +98,7 @@ Page({
 						})
 					}
 					this.setData({
-						isSignIn: true
+						isLogin: true
 					})
 				},
 				fail: err => {
@@ -113,7 +107,7 @@ Page({
 						icon: 'none',
 						title: '网络错误，请稍后再试'
 					})
-					console.error('[数据库] [新增记录] 失败：', err)
+					console.error('[login] [查询记录] 失败：', err)
 				}
 			})
 		} else { //如果此次会话中已经签过到
@@ -129,7 +123,7 @@ Page({
 	 */
 	onHide: function () {
 		this.setData({
-			isSignIn: false
+			isLogin: false
 		})
 	},
 
@@ -138,7 +132,7 @@ Page({
 	 */
 	onUnload: function () {
 		this.setData({
-			isSignIn: false
+			isLogin: false
 		})
 	}
 })

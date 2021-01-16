@@ -1,82 +1,91 @@
-<!--miniprogram/pages/mainpage/mainpage.wxml-->
+<!--miniprogram/pages/mainPage/mainPage.wxml-->
 
-<text class="titletext">全部测试</text>
+<text class="titleText">全部测试</text>
 <navigator url="/pages/myPage/myPage" open-type="navigate">
-	<view class="avatarview">
-		<open-data type="userAvatarUrl" default-avatar="./user-unlogin.png" class="avatar" />
+	<view class="avatarView">
+		<open-data type="userAvatarUrl" default-avatar="/images/userUnLogin.png" class="avatar" />
 	</view>
 </navigator>
 
-<swiper previous-margin="40rpx" next-margin="70rpx" class="suggestion">
+<swiper previous-margin="40rpx" next-margin="70rpx" class="recommendSwiper">
 	<swiper-item>
 		<navigator url="/pages/scanNaviPage/scanNaviPage?type=tatueHarmony" open-type="navigate">
-			<image class="centerbutton" src="{{posterurl}}" mode="aspectFit" />
+			<image class="centerButton" src="{{posterUrl}}" mode="aspectFit" />
 		</navigator>
 	</swiper-item>
 	<swiper-item>
 		<navigator url="/pages/scanNaviPage/scanNaviPage" open-type="navigate">
-			<image class="centerbutton" src="{{posterurl}}" mode="aspectFit" />
+			<image class="centerButton" src="{{posterUrl}}" mode="aspectFit" />
 		</navigator>
 	</swiper-item>
 </swiper>
 
-<div class="firstdiv">
-	<text class="subtitletext">人格测试</text>
-	<text class="explanation">尽责性是指我们控制、管理和调节自身冲动的…</text>
-	<div class="subdiv">
+<!-----------------------------人格组学----------------------------->
+<div class="firstDiv">
+	<text class="subtitleText">我是谁？</text>
+	<text class="explanation">重新认识一下自己吧。</text>
+	<div class="subDiv">
 		<swiper next-margin="30rpx">
 			<swiper-item>
-				<navigator url="/pages/big5duty/big5duty" open-type="navigate">
-					<image class="leftbutton" src="/images/big5duty.png" mode="aspectFit" />
-					<text class="maintext">尽责性是指我们控制、管理和调节自身冲动的方式, 是评估一个人在完成…</text>
+				<navigator url="/pages/big5Duty/big5Duty" open-type="navigate">
+					<image class="leftButton" src="/images/big5Duty.png" mode="aspectFit" />
+					<text class="mainText">我是个靠谱的人吗？</text>
 				</navigator>
 			</swiper-item>
 			<swiper-item>
-				<navigator url="/pages/big5stability/big5stability" open-type="navigate">
-					<image class="leftbutton" src="/images/big5stability.png" mode="aspectFit" />
-					<text class="maintext">情绪稳定性是指人的情绪状态随外界或内部条件变化而产生波动的情况。</text>
+				<navigator url="/pages/big5Stability/big5Stability" open-type="navigate">
+					<image class="leftButton" src="/images/big5Stability.png" mode="aspectFit" />
+					<text class="mainText">我是个遇事不惊的人吗？</text>
 				</navigator>
 			</swiper-item>
 		</swiper>
 	</div>
 </div>
 
-<div class="seconddiv">
-	<text class="subtitletext">情绪稳定性测试</text>
-	<text class="explanation">情绪稳定性是指人的情绪状态随外界或内部条…</text>
-	<div class="subdiv">
+<!-----------------------------婚恋观----------------------------->
+<div class="secondDiv">
+	<text class="subtitleText">我对象是谁？</text>
+	<text class="explanation">不谈灵魂伴侣，不讲物质匹配，只认内心。</text>
+	<div class="subDiv">
 		<swiper next-margin="30rpx">
 			<swiper-item>
-				<navigator url="/pages/big5duty/big5duty" open-type="navigate">
-					<image class="leftbutton" src="/images/big5duty.png" mode="aspectFit" />
-					<text class="maintext">尽责性是指我们控制、管理和调节自身冲动的方式, 是评估一个人在完成…</text>
+				<navigator url="/pages/big5Duty/big5Duty" open-type="navigate">
+					<image class="leftButton" src="/images/big5Duty.png" mode="aspectFit" />
+					<text class="mainText">我未来的对象什么样？</text>
 				</navigator>
 			</swiper-item>
 			<swiper-item>
-				<navigator url="/pages/big5stability/big5stability" open-type="navigate">
-					<image class="leftbutton" src="/images/big5stability.png" mode="aspectFit" />
-					<text class="maintext">情绪稳定性是指人的情绪状态随外界或内部条件变化而产生波动的情况。</text>
+				<navigator url="/pages/big5Stability/big5Stability" open-type="navigate">
+					<image class="leftButton" src="/images/big5Stability.png" mode="aspectFit" />
+					<text class="mainText">我现在的对象还能要吗？</text>
+				</navigator>
+			</swiper-item>
+			<swiper-item>
+				<navigator url="/pages/big5Stability/big5Stability" open-type="navigate">
+					<image class="leftButton" src="/images/big5Stability.png" mode="aspectFit" />
+					<text class="mainText">我和对象生活习惯大赏</text>
 				</navigator>
 			</swiper-item>
 		</swiper>
 	</div>
 </div>
 
+<!-----------------------------未来发展----------------------------->
 <div class="thirddiv">
-	<text class="subtitletext">尽责类测试</text>
-	<text class="explanation">本类测试的一句式说明</text>
-	<div class="subdiv">
+	<text class="subtitleText">我要干什么？</text>
+	<text class="explanation">我的未来规划。</text>
+	<div class="subDiv">
 		<swiper next-margin="30rpx">
 			<swiper-item>
-				<navigator url="/pages/big5duty/big5duty" open-type="navigate">
-					<image class="leftbutton" src="/images/big5duty.png" mode="aspectFit" />
-					<text class="maintext">尽责性是指我们控制、管理和调节自身冲动的方式, 是评估一个人在完成…</text>
+				<navigator url="/pages/big5Duty/big5Duty" open-type="navigate">
+					<image class="leftButton" src="/images/big5Duty.png" mode="aspectFit" />
+					<text class="mainText">高考怎么选专业？</text>
 				</navigator>
 			</swiper-item>
 			<swiper-item>
-				<navigator url="/pages/big5stability/big5stability" open-type="navigate">
-					<image class="leftbutton" src="/images/big5stability.png" mode="aspectFit" />
-					<text class="maintext">情绪稳定性是指人的情绪状态随外界或内部条件变化而产生波动的情况。</text>
+				<navigator url="/pages/big5Stability/big5Stability" open-type="navigate">
+					<image class="leftButton" src="/images/big5Stability.png" mode="aspectFit" />
+					<text class="mainText">怎么选职业？</text>
 				</navigator>
 			</swiper-item>
 		</swiper>

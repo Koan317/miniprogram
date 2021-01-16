@@ -1,6 +1,6 @@
-<!--miniprogram/pages/big5duty/big5duty_report/big5duty_report.wxml-->
+<!--miniprogram/pages/testReport/testReport.wxml-->
 
-<text class="score">您的得分是{{score}}分</text>
+<text wx:if="{{scoreDis}}" class="score">您的得分是{{score}}分</text>
 <view wx:for="{{report}}" wx:key="big5">
 	<text class="maintext">{{item.Q}}</text>
 </view>

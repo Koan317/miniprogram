@@ -1,4 +1,4 @@
-/* miniprogram/pages/big5duty/big5duty.wxss */
+/* miniprogram/pages/big5Duty/big5Duty.wxss */
 .title {
   font-size: 32px;
   display: flex;

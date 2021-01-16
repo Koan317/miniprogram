@@ -1,4 +1,4 @@
-/* miniprogram/pages/big5duty/big5duty_report/big5duty_report.wxss */
+/* miniprogram/pages/testReport/testReport.wxss */
 
 .score {
 	font-size: 64rpx;

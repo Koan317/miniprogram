@@ -4,4 +4,4 @@
 	<open-data type="userAvatarUrl" class="avatar" />
 </view>
 <calendar days-color="{{daysColor}}" weeks-type="cn"/>
-<button bindtap="onSignIn">今日签到</button>
+<button bindtap="onLogin">今日签到</button>

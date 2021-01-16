@@ -1,4 +1,5 @@
-<!--miniprogram/pages/big5stability/big5stability.wxml-->
+<!--miniprogram/pages/big5Stability/big5Stability.wxml-->
+
 <text class="title">稳定性测试</text>
 <text class="explain" decode="{{true}}">
   &emsp;&emsp;情绪稳定性或神经质性（Neuroticism）是心理学评判一个人人格特质的指标之一，指人的情绪状态随外界或内部条件变化而产生波动的情况，反映每个人情感调节的过程，是反应人的心理健康的重要指标（彭聃龄，2012）。
@@ -12,7 +13,7 @@
       <div>　　　　</div>
       <div>说不清楚</div>
       <div>　　　　</div>
-      <div>完全否认</div>
+      <div>我不同意</div>
     </div>
     <div>
       <radio-group class="table" name="{{item.No}}">

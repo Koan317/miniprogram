@@ -1,12 +1,12 @@
-/* miniprogram/pages/mainpage/mainpage.wxss */
-.titletext {
+/* miniprogram/pages/mainPage/mainPage.wxss */
+.titleText {
 	font-size: 64rpx;
 	position: absolute;
 	top: 40rpx;
 	left: 40rpx;
 }
 
-.avatarview {
+.avatarView {
 	position: absolute;
 	top: 40rpx;
 	left: 620rpx;
@@ -22,14 +22,14 @@
 	width: 90rpx;
 }
 
-.suggestion {
+.recommendSwiper {
 	position: absolute;
 	height: 266rpx;
 	width: 750rpx;
 	top: 160rpx;
 }
 
-.subtitletext {
+.subtitleText {
 	font-size: 48rpx;
 	position: absolute;
 	top: 20rpx;
@@ -42,7 +42,7 @@
 	color: #999999;
 }
 
-.maintext {
+.mainText {
 	font-size: 32rpx;
 	position: absolute;
 	height: 189rpx;
@@ -50,7 +50,7 @@
 	left: 355rpx;
 }
 
-.firstdiv {
+.firstDiv {
 	position: absolute;
 	top: 460rpx;
 	left: 40rpx;
@@ -58,7 +58,7 @@
 	width: 710rpx;
 }
 
-.seconddiv {
+.secondDiv {
 	position: absolute;
 	top: 860rpx;
 	left: 40rpx;
@@ -66,7 +66,7 @@
 	width: 710rpx;
 }
 
-.thirddiv {
+.thirdDiv {
 	position: absolute;
 	top: 1260rpx;
 	left: 40rpx;
@@ -74,7 +74,7 @@
 	width: 710rpx;
 }
 
-.fourthdiv {
+.fourthDiv {
 	position: absolute;
 	top: 1660rpx;
 	left: 40rpx;
@@ -82,21 +82,21 @@
 	width: 710rpx;
 }
 
-.subdiv {
+.subDiv {
 	position: absolute;
 	top: 160rpx;
 	height: 189rpx;
 	width: 710rpx;
 }
 
-.leftbutton {
+.leftButton {
 	border-style: none;
 	position: absolute;
 	height: 189rpx;
 	width: 315rpx;
 }
 
-.rightbutton {
+.rightButton {
 	border-style: none;
 	position: absolute;
 	height: 189rpx;
@@ -104,7 +104,7 @@
 	left: 355rpx;
 }
 
-.centerbutton {
+.centerButton {
 	border-style: none;
 	position: absolute;
 	height: 266rpx;
@@ -113,11 +113,11 @@
 }
 
 @media (prefers-color-scheme: dark) {
-	.titletext {
+	.titleText {
 		color: #ffffff;
 	}
 
-	.subtitletext {
+	.subtitleText {
 		color: #ffffff;
 	}
 
@@ -125,7 +125,7 @@
 		color: #999999;
 	}
 
-	.maintext {
+	.mainText {
 		color: #ffffff;
 	}
 }
